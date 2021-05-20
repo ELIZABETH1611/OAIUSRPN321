@@ -17,3 +17,5 @@ cmake_targets/tools/build_helper
 targets/ARCH/USRP/USERSPACE/LIB/usrp_lib.cpp
 
 #1098# usrp_master_clock = 122.88e6 -> usrp_master_clock = 254.76e6;
+
+# OAI_XX are configuration files used
