@@ -1,34 +1,21 @@
-%\subsection{Procedure to Build \ac{5G-NSA} with \ac{OAI}}
-%\label{subsec: Positioning diffraction points }
-%The steps to install the \ac{OAI} to deploy a \ac{5G-NSA} network are detailed as follows:
-%This subsection will detail the steps to install \ac{OAI} to deploy a \ac{5G-NSA} network.
+Procedure to Build 5G-NSA with OAI
 
-%\begin{enumerate}
-  %  \item Clone \ac{OAI} code from git server.
-   %     \begin{itemize}
-   % \item \textit{\$ sudo apt-get install git}
-  %  \item \textit{\$ git clone 
-  %  \url{https://gitlab.eurecom.fr/\diagup oai/\diagup openairinterface5g.git}}
-  %  \end{itemize}
-   % \item Browse to the folder named ``openairinterface5g", its path will be similar to ``/home/user/oai2021/openairinterface5g/" and switch to the \textit{``Develop"} branch.
- %   \begin{itemize}
-%    \item \textit{\$ git checkout develop}
-%   \end{itemize}
- %   In the console, a message ``Switched to new prime `develop' branch" will be appear.
- %   \begin{itemize}
- %   \item \textit{\$ source oaienv}
-  %  \end{itemize}
- %   Now, the \ac{OAI} software is installed on the server and the next step is to compile it.
-  %  \item Browse to the folder named ``cmake\_targets", its path will be similar to ``/home/user/oai2021/openairinterface5g/cmake\_targets/" and execute:
-   % \begin{itemize}
-%    \item \textit{\$ sudo ./build\_oai -I -w \ac{USRP} $--$eNB  $--$gNB $--$UE }
- %   \end{itemize}
-  %  where:
-   %  \begin{itemize}
-    %\item -I installs the software and libraries required for \ac{OAI}.
-    %\item -w \ac{USRP} installs all radio software requirements. 
-    %\item $--$eNB and $--$gNB builds the libraries for \ac{LTE} and \ac{NR}, the result will be the executables lte-softmodem and nr-softmodem.
-    %\item $--$UE builds the lte-uesoftmodem executable.
-    %\end{itemize}
-    %At the end of the process in the console you will see the message \textit{``BUILD SHOULD BE %SUCCESSFUL"}.
-%\end{enumerate}
+The steps to install the OAI to deploy a 5G-NSA network are detailed as follows:
+
+1) Clone OAI code from git server.
+$ sudo apt-get install git
+$ git clone https://gitlab.eurecom.fr/\diagup oai/\diagup openairinterface5g.git
+
+2) Browse to the folder named "openairinterface5g" and switch to the "Develop" branch
+$ git checkout develop
+A message will appear in the console indicating that it has switched properly to the branch.
+$ source oaienv
+Now, the OAI software is installed on the server and ready to be compiled.
+
+3) Browse to the folder "cmake_targets" located inside openairinterface5g and execute
+$ sudo ./build_oai -I -w URSP --eNB --gNB --UE
+- I installs software and libraries required for OAI (only mandatory on first build)
+-w USRP installs the radio software requirements
+--eNB and --gNB build the libraries for LTE and NR, creating the executables lte-softmodem and nr-softmodem
+--UE builds an UE simulator 
+   
